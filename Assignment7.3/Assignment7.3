@@ -1,0 +1,30 @@
+package myPack;
+
+public class Substring1 {
+	public static void main(String[] args) {
+	    String webapple = "webapple";//String
+	    String apple = "apple";// substring whether it contains  in the string or not
+	    char[] webappleArray = webapple.toCharArray();// converting to character array
+	    char[] appleArray = apple.toCharArray();//// converting to character array
+	    System.out.println(isPresent(appleArray, webappleArray));
+	}
+
+	public static boolean isPresent(char[] apple, char[] webapple) {// method to check whether given substring is substring of the first one or not using boolean return type
+	    for (int i = 0; i < webapple.length - apple.length+1; i++) {
+	        for (int j = 0; j < apple.length; j++) {
+	            if (webapple[i + j] == apple[j]) {
+	                if (j == apple.length - 1) {
+	                    return true;// if string apple is substring of web apple return true
+	                }
+	                
+	             
+	            } else {
+	                break;
+	            }
+	        }
+	    }
+	    return false;//if string apple is not substring of web apple return true
+	}
+
+}
+// since from comment of previous code (Assignment 7.2) it depicts we need to find whether substring is present or not rather then creating one, hence using two strings here to check if later one substring of previous.

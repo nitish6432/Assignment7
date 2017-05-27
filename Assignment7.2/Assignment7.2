@@ -1,0 +1,28 @@
+package myPack;
+
+
+	import java.util.Scanner;// importing scanner class to get input from user
+	
+	class Substring{
+		public static void main(String args[]){
+		
+			String str1, str2;
+			int length;
+			//To capture user input
+			Scanner in = new Scanner(System.in);
+			System.out.println("Enter a string to find its sub-strings");
+			str1  = in.nextLine();//taking input from user
+			length = str1.length();//length of input string
+			System.out.println("Sub-strings of the string \""+str1+"\" found which are");
+			
+			//iterating through the string using two for loops
+			
+			for(int c = 0 ; c < length ; c++ ){ 
+				for(int i = 1 ; i <= length - c ; i++ ){
+					 //inbuilt method of String class to find sub string
+					str2 = str1.substring(c, c+i);
+					System.out.println(str2);// printing the substrings
+				}
+			}
+		}
+	}
